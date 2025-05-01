@@ -1,4 +1,7 @@
 package org.example;
 
-public class Daisy {
+public class Daisy extends Flower {
+    public Daisy(String name, double price, boolean isAvailable) {
+        super(name, price, isAvailable);
+    }
 }
