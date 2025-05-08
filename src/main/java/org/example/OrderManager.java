@@ -56,4 +56,22 @@ public class OrderManager {
     public void removeFlowerByName(String name, List<Flower> inventory) {
         inventory.removeIf(f -> f.getName().equalsIgnoreCase(name));
     }
+
+    public List<Flower> filterByPrice(double min, double max, List<Flower> inventory) {
+        return inventory.stream()
+                .filter(f -> f.getPrice() >= min && f.getPrice() <= max)
+                .toList();
+    }
+
+    public List<Flower> searchByName(String name, List<Flower> inventory) {
+        return inventory.stream()
+                .filter(f -> f.getName().toLowerCase().contains(name.toLowerCase()))
+                .toList();
+    }
+
+    public List<Flower> filterByType(String typeName, List<Flower> inventory) {
+        return inventory.stream()
+                .filter(f -> f.getClass().getSimpleName().equalsIgnoreCase(typeName))
+                .toList();
+    }
 }
