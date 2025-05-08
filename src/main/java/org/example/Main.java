@@ -38,6 +38,12 @@ public class Main {
             System.out.println(" - " + flower.getName());
         }
 
+        // Filter by type
+        System.out.println("\nFiltering by type 'Tulip':");
+        List<Flower> tulips = orderManager.filterByType("Tulip", inventory);
+        for (Flower flower : tulips) {
+            System.out.println(" - " + flower.getName());
+        }
 
     }
 }
