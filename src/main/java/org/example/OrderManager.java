@@ -42,4 +42,18 @@ public class OrderManager {
             System.out.println("Inventory file not found.");
         }
     }
+
+    public void saveInventory(List<Flower> inventory) {
+        try (PrintWriter writer = new PrintWriter("inventory.txt")) {
+            for (Flower flower : inventory) {
+                writer.println(flower.getName() + "," + flower.getPrice() + "," + flower.isAvailable());
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving inventory: " + e.getMessage());
+        }
+    }
+
+    public void removeFlowerByName(String name, List<Flower> inventory) {
+        inventory.removeIf(f -> f.getName().equalsIgnoreCase(name));
+    }
 }
