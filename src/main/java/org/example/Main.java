@@ -45,5 +45,17 @@ public class Main {
             System.out.println(" - " + flower.getName());
         }
 
+        // Create a customer and place an order
+        Customer alice = new Customer("Alice", "C001");
+        Order order = new Order();
+        order.addItem(inventory.get(0)); // Red Rose
+        order.addItem(inventory.get(2)); // White Daisy
+
+        orderManager.addOrder(alice, order);
+
+        System.out.println("\nOrder total for " + alice.getName() + ": $" + order.calculateTotal());
+
+        orderManager.saveOrders();
+
     }
 }
