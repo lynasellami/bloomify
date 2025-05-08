@@ -57,5 +57,6 @@ public class Main {
 
         orderManager.saveOrders();
 
+        System.out.println("Order saved. Thank you for shopping with Bloomify!");
     }
 }
