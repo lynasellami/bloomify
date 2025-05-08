@@ -1,4 +1,6 @@
 package org.example;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Main class to demo basic polymorphism.
@@ -11,5 +13,15 @@ public class Main {
         Flower f1 = new Rose("Red Rose", 10.99, true);
         Flower f2 = new Tulip("Yellow Tulip", 5.49, true);
         System.out.println(f1.compareTo(f2)); // Demonstrates Comparable
+
+        OrderManager orderManager = new OrderManager();
+        List<Flower> inventory = new ArrayList<>();
+
+        inventory.add(new Rose("Red Rose", 10.99, true));
+        inventory.add(new Tulip("Yellow Tulip", 5.49, true));
+        inventory.add(new Daisy("White Daisy", 3.25, true));
+        inventory.add(new Rose("Pink Rose", 12.50, true));
+
+        orderManager.saveInventory(inventory);
     }
 }
