@@ -23,5 +23,13 @@ public class Main {
         inventory.add(new Rose("Pink Rose", 12.50, true));
 
         orderManager.saveInventory(inventory);
+
+        // Filter by price
+        System.out.println("\nFlowers between $5 and $11:");
+        List<Flower> filtered = orderManager.filterByPrice(5.0, 11.0, inventory);
+        for (Flower flower : filtered) {
+            System.out.println(" - " + flower.getName() + ": $" + flower.getPrice());
+        }
+
     }
 }
