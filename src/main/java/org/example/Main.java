@@ -31,5 +31,13 @@ public class Main {
             System.out.println(" - " + flower.getName() + ": $" + flower.getPrice());
         }
 
+        // Search by name
+        System.out.println("\nSearch results for 'rose':");
+        List<Flower> searchResults = orderManager.searchByName("rose", inventory);
+        for (Flower flower : searchResults) {
+            System.out.println(" - " + flower.getName());
+        }
+
+
     }
 }
