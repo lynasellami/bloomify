@@ -20,6 +20,3 @@ public class CustomerTest {
         assertEquals("Yellow Tulip", customer.getCart().get(0).getName());
     }
 }
-
-
-
